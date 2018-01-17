@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_lralert" default="compile.module.lralert">
+  <dirname property="module.lralert.basedir" file="${ant.file.module_lralert}"/>
+  
+  <property name="module.jdk.home.lralert" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.lralert" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.lralert" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.lralert" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="lralert.output.dir" value="${module.lralert.basedir}/build/classes/production/LRAlert"/>
+  <property name="lralert.testoutput.dir" value="${module.lralert.basedir}/build/classes/test/LRAlert"/>
+  
+  <path id="lralert.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="lralert.module.production.classpath">
+    <path refid="${module.jdk.classpath.lralert}"/>
+  </path>
+  
+  <path id="lralert.runtime.production.module.classpath">
+    <pathelement location="${lralert.output.dir}"/>
+  </path>
+  
+  <path id="lralert.module.classpath">
+    <path refid="${module.jdk.classpath.lralert}"/>
+    <pathelement location="${lralert.output.dir}"/>
+  </path>
+  
+  <path id="lralert.runtime.module.classpath">
+    <pathelement location="${lralert.testoutput.dir}"/>
+    <pathelement location="${lralert.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.lralert">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.lralert">
+    <patternset refid="excluded.from.module.lralert"/>
+  </patternset>
+  
+  
+  <target name="compile.module.lralert" depends="compile.module.lralert.production,compile.module.lralert.tests" description="Compile module LRAlert"/>
+  
+  <target name="compile.module.lralert.production" depends="register.custom.compilers" description="Compile module LRAlert; production classes"/>
+  
+  <target name="compile.module.lralert.tests" depends="register.custom.compilers,compile.module.lralert.production" description="compile module LRAlert; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.lralert" description="cleanup module">
+    <delete dir="${lralert.output.dir}"/>
+    <delete dir="${lralert.testoutput.dir}"/>
+  </target>
+</project>

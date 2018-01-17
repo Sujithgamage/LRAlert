@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "736716255204",
+    "firebase_url": "https://lralert-14816.firebaseio.com",
+    "project_id": "lralert-14816",
+    "storage_bucket": "lralert-14816.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736716255204:android:2151fc1e14103c20",
+        "android_client_info": {
+          "package_name": "com.michaelfotiadis.ibeaconscanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736716255204-71mqfce2or6fhamvekbmsn0mhv9b5hmv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.michaelfotiadis.ibeaconscanner",
+            "certificate_hash": "9cda46bb21f7632a3b6ae5079f9ff8521c446a55"
+          }
+        },
+        {
+          "client_id": "736716255204-qae005kttb44np2kksdattod47s2fg0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsR9aMA1Zxy3Cg8nF43tY3Qz7KWbwcIzA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736716255204-qae005kttb44np2kksdattod47s2fg0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

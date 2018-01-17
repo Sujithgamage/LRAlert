@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="lralert" default="all">
+  
+  
+  <property file="lralert.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/ext/access-bridge-64.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.__local_aars__:f.\mobile_computing\mobile_computing\lralert\app\libs\merge-1.0.2.jar:unspecified@jar.classpath">
+    <pathelement location="${basedir}/app/libs/merge-1.0.2.jar"/>
+  </path>
+  
+  <path id="library.__local_aars__:f.\mobile_computing\mobile_computing\lralert\app\libs\sacklist-1.0.0.jar:unspecified@jar.classpath">
+    <pathelement location="${basedir}/app/libs/sacklist-1.0.0.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:animated-vector-drawable-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.1.0.aar/4bb647fbae157b7d779bfd3db0567974/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.1.0.aar/4bb647fbae157b7d779bfd3db0567974/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:appcompat-v7-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.1.0.aar/dd1cfee91051e111f8cb2fac9eab061a/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.1.0.aar/dd1cfee91051e111f8cb2fac9eab061a/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:design-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/design-25.1.0.aar/d989513a65619ae50bf6cbebc4db6d81/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/design-25.1.0.aar/d989513a65619ae50bf6cbebc4db6d81/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:preference-v14-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/preference-v14-25.1.0.aar/f157de1954e3e2bd4d1910de7e096ecf/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/preference-v14-25.1.0.aar/f157de1954e3e2bd4d1910de7e096ecf/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:preference-v7-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/preference-v7-25.1.0.aar/7ee74ea8039d89fdd7e7e3ff9bcafc29/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/preference-v7-25.1.0.aar/7ee74ea8039d89fdd7e7e3ff9bcafc29/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:recyclerview-v7-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.1.0.aar/0b1eca6a9b79ba2e7da3e4521b1ab4ce/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.1.0.aar/0b1eca6a9b79ba2e7da3e4521b1ab4ce/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:support-annotations:25.1.0@jar.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/AppData/Local/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:support-compat-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-compat-25.1.0.aar/84fe873b32c16bef5f766c18ad68f8d5/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-compat-25.1.0.aar/84fe873b32c16bef5f766c18ad68f8d5/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:support-core-ui-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.1.0.aar/ff477f6593974068d89db263595b7f5e/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.1.0.aar/ff477f6593974068d89db263595b7f5e/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:support-core-utils-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.1.0.aar/c16d7ac8adc6999c32d4e05060d2e55c/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.1.0.aar/c16d7ac8adc6999c32d4e05060d2e55c/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:support-fragment-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-fragment-25.1.0.aar/4453eed46ebf08da6a5b33250b926278/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-fragment-25.1.0.aar/4453eed46ebf08da6a5b33250b926278/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:support-media-compat-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.1.0.aar/591a4bd610bc5bc76e7c7029e3295f91/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.1.0.aar/591a4bd610bc5bc76e7c7029e3295f91/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:support-v13-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-v13-25.1.0.aar/55f2e8b93219a932af0e6f7e563ebb6a/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-v13-25.1.0.aar/55f2e8b93219a932af0e6f7e563ebb6a/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:support-v4-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-v4-25.1.0.aar/45f9b42cd6c3cf2bff8eff9fbd529112/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-v4-25.1.0.aar/45f9b42cd6c3cf2bff8eff9fbd529112/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:support-vector-drawable-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.1.0.aar/cc4dfe2a3245895c3564906d74bebdb4/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.1.0.aar/cc4dfe2a3245895c3564906d74bebdb4/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.android.support:transition-25.1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/transition-25.1.0.aar/0784e0d654d86d66b0bd679639e868a7/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/transition-25.1.0.aar/0784e0d654d86d66b0bd679639e868a7/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.anthonycr.grant:permissions-1.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/permissions-1.0.aar/1d3408dbe7a0b458f19d347606b8a98d/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/permissions-1.0.aar/1d3408dbe7a0b458f19d347606b8a98d/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.crashlytics.sdk.android:answers-1.3.10.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/answers-1.3.10.aar/d98b291346885b984380823754e63cad/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/answers-1.3.10.aar/d98b291346885b984380823754e63cad/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.crashlytics.sdk.android:beta-1.2.2.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/beta-1.2.2.aar/047198b7290726b94df03cbca861aed1/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/beta-1.2.2.aar/047198b7290726b94df03cbca861aed1/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.crashlytics.sdk.android:crashlytics-2.6.5.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/crashlytics-2.6.5.aar/ae26ae05f4c7ef6d1a3eb502cc2e655b/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/crashlytics-2.6.5.aar/ae26ae05f4c7ef6d1a3eb502cc2e655b/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.crashlytics.sdk.android:crashlytics-core-2.3.14.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/crashlytics-core-2.3.14.aar/e1cccc503fff9522a39d654af13c4fd8/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/crashlytics-core-2.3.14.aar/e1cccc503fff9522a39d654af13c4fd8/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.com.github.johnpersano:supertoasts-2.0.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/supertoasts-2.0.aar/a270a9e4fa60f25ada6cb29fc1f4af6b/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/supertoasts-2.0.aar/a270a9e4fa60f25ada6cb29fc1f4af6b/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.io.fabric.sdk.android:fabric-1.3.14.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/fabric-1.3.14.aar/9be76fe6fa8f72b5372c4c12d44cbd1e/res"/>
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/transforms-1/files-1.1/fabric-1.3.14.aar/9be76fe6fa8f72b5372c4c12d44cbd1e/jars/classes.jar"/>
+  </path>
+  
+  <path id="library.uk.co.alt236:bluetooth-le-library-android:1.0.0@jar.classpath">
+    <pathelement location="C:/Users/Sujith Gamage/.gradle/caches/modules-2/files-2.1/uk.co.alt236/bluetooth-le-library-android/1.0.0/20509edb81b61be92497cdf8984f343642956c1f/bluetooth-le-library-android-1.0.0.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/app/module_app.xml"/>
+  
+  <import file="${basedir}/module_lralert.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.app, clean.module.lralert" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.app, compile.module.lralert" description="build all modules"/>
+  
+  <target name="all" depends="build.modules" description="build all"/>
+</project>
